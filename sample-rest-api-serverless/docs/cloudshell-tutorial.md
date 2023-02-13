@@ -92,7 +92,7 @@ API_KEY=REPLACE_WITH_API_KEY
 2. Execute the test command
 
 ```sh
-curl --location --request GET "https://$APIGEE_HOST/v1/samples/rest-api-serverless" --header "x-api-key: $API_KEY -v"
+curl --location --request GET "https://$APIGEE_HOST/v1/samples/rest-api-serverless" --header "x-api-key: $API_KEY" -v
 ```
 
 ---
