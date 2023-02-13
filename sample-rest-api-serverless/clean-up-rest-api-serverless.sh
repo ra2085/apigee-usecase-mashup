@@ -46,6 +46,16 @@ echo "Installing apigeecli"
 curl -s https://raw.githubusercontent.com/apigee/apigeecli/master/downloadLatest.sh | bash
 export PATH=$PATH:$HOME/.apigeecli/bin
 
+echo "Deleting Developer App"
+DEVELOPER_ID=$(apigeecli developers get --email rest-api-serverless_apigeesamples@acme.com --org "$PROJECT" --token "$TOKEN" --disable-check | jq .'developerId' -r)
+apigeecli apps delete --id "$DEVELOPER_ID" --name rest-api-serverless-sample-app --org "$PROJECT" --token "$TOKEN"
+
+echo "Deleting Developer"
+apigeecli developers delete --email rest-api-serverless_apigeesamples@acme.com --org "$PROJECT" --token "$TOKEN"
+
+echo "Deleting API Products"
+apigeecli products delete --name rest-api-serverless-sample-product --org "$PROJECT" --token "$TOKEN"
+
 echo "Undeploying sample-rest-api-serverless proxy"
 REV=$(apigeecli envs deployments get --env "$APIGEE_ENV" --org "$PROJECT" --token "$TOKEN" --disable-check | jq .'deployments[]| select(.apiProxy=="sample-rest-api-serverless").revision' -r)
 apigeecli apis undeploy --name sample-rest-api-serverless --env "$APIGEE_ENV" --rev "$REV" --org "$PROJECT" --token "$TOKEN"

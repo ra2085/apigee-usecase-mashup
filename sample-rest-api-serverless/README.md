@@ -21,11 +21,11 @@ Use the following GCP CloudShell tutorial, and follow the instructions.
 
 ## Setup instructions
 
-1. Clone the apigee-usecase-mashup repo, and switch the cloud-run directory
+1. Clone the apigee-usecase-mashup repo, and switch the sample-rest-api-serverless directory
 
 ```bash
 git clone https://github.com/ra2085/apigee-usecase-mashup
-cd cloud-run
+cd sample-rest-api-serverless
 ```
 
 2. Edit the `env.sh` and configure the ENV vars
@@ -41,10 +41,10 @@ Now source the `env.sh` file
 source ./env.sh
 ```
 
-3. Enable the Cloud Build API, Cloud Run API and Container Registry API. Assign Apigee Org admin, Cloud Run Admin, Service Account User and Admin role to the Cloud Build service account
+3. Enable the Cloud Build API, IAM API, Cloud Run API and Container Registry API. Assign Apigee Org admin, Cloud Run Admin, Service Account User and Admin role to the Cloud Build service account
 
 ```bash
-gcloud services enable cloudbuild.googleapis.com run.googleapis.com containerregistry.googleapis.com
+gcloud services enable iam.googleapis.com cloudbuild.googleapis.com run.googleapis.com containerregistry.googleapis.com
 
 gcloud projects add-iam-policy-binding "$PROJECT" \
   --member="serviceAccount:$CLOUD_BUILD_SA" \
@@ -74,8 +74,15 @@ gcloud builds submit --config cloudbuild.yaml . \
 
 You can test the API call to make sure the deployment was successful
 
-```bash
-curl -v -H "x-api-key: $API_KEY" -X GET https://$APIGEE_HOST/v1/samples/rest-api-serverless
+1. Set the `API_KEY` environment variable with the output value from the previous step
+
+```
+API_KEY=REPLACE_WITH_API_KEY
+```
+2. Execute the test command
+
+```sh
+curl --location --request GET "https://$APIGEE_HOST/v1/samples/rest-api-serverless" --header "x-api-key: $API_KEY -v"
 ```
 
 ## Cleanup

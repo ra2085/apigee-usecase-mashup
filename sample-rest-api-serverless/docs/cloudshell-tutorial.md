@@ -1,4 +1,4 @@
-# Sample to use Cloud Run Service from Apigee Proxy using Maven and Cloud Build
+# Sample to use Cloud Run Service from Apigee Proxy
 
 ---
 This sample demonstrates how to use Cloud Run Services from Apigee Proxy using Cloud Build
@@ -35,10 +35,10 @@ source ./env.sh
 
 ## Deploy Cloud Run Sample
 
-First, let enabled the Cloud Build API, Cloud Run API and Container Registry API
+First, let enabled the IAM API, Cloud Build API, Cloud Run API and Container Registry API
 
 ```sh
-gcloud services enable cloudbuild.googleapis.com run.googleapis.com containerregistry.googleapis.com
+gcloud services enable iam.googleapis.com cloudbuild.googleapis.com run.googleapis.com containerregistry.googleapis.com
 ```
 
 Once the API is enabled, lets assign the Apigee Org Admin role, Cloud Run Admin and Service Account Admin and User Role to the Cloud Build service account
@@ -84,8 +84,15 @@ This script creates an API product, a sample App developer, an App, and environm
 
 You can test the API call to make sure the deployment was successful
 
+1. Set the `API_KEY` environment variable with the output value from the previous step
+
+```
+API_KEY=REPLACE_WITH_API_KEY
+```
+2. Execute the test command
+
 ```sh
-curl -v -H "x-api-key: $API_KEY" -X GET https://$APIGEE_HOST/v1/samples/rest-api-serverless
+curl --location --request GET "https://$APIGEE_HOST/v1/samples/rest-api-serverless" --header "x-api-key: $API_KEY -v"
 ```
 
 ---
