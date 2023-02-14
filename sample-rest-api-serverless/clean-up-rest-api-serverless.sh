@@ -69,7 +69,7 @@ gcloud --quiet run services delete "$CLOUD_RUN_SERVICE" --region="$CLOUD_RUN_REG
 echo "Deleting service account"
 gcloud --quiet iam service-accounts delete ${SA_NAME}@"${PROJECT}".iam.gserviceaccount.com
 
-echo "Deleting ws_sec_configuration environment property set..."
-apigeecli res delete --org "$PROJECT" --env "$APIGEE_ENV" --token "$TOKEN" --name ws_sec_configuration --type properties
+echo "Deleting mock config environment property set..."
+apigeecli res delete --org "$PROJECT" --env "$APIGEE_ENV" --token "$TOKEN" --name mock_configuration --type properties
 
-rm ws_sec_configuration.properties
+rm mock_configuration.properties
