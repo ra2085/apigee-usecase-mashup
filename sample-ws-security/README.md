@@ -45,7 +45,7 @@ source ./env.sh
 Next, let's create and deploy the Apigee resources.
 
 ```sh
-./deploy-rest-api-serverless.sh
+./deploy-ws-security.sh
 ```
 
 ## Test the APIs
@@ -77,5 +77,5 @@ Notice the `<valid>true</valid>` element value in the response.
 If you want to clean up the artifacts from this example in your Apigee Organization, first source your `env.sh` script, and then run
 
 ```bash
-./clean-up-cloud-run.sh
+./clean-up-ws-security.sh
 ```
