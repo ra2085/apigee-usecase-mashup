@@ -18,7 +18,7 @@ limitations under the License.
 <ProxyEndpoint name="default">
     <Description>Proxy for Java callout for WS-Security signing</Description>
     <HTTPProxyConnection>
-        <BasePath>/v1/samples/vs-security</BasePath>
+        <BasePath>/v1/samples/ws-security</BasePath>
         <Properties/>
         <VirtualHost>secure</VirtualHost>
     </HTTPProxyConnection>

@@ -55,19 +55,19 @@ You can test the API call to make sure the deployment was successful
 1. Obtain an inspect a signed envelope
 
 ```sh
-curl --location --request POST "https://$APIGEE_HOST/v1/samples/vs-security/sign1" --header 'Content-Type: application/xml' --data-raw '<soapenv:Envelope xmlns:ns1='\''http://ws.example.com/'\'' xmlns:soapenv='\''http://schemas.xmlsoap.org/soap/envelope/'\''><soapenv:Body><ns1:sumResponse><ns1:return>9</ns1:return></ns1:sumResponse></soapenv:Body></soapenv:Envelope>' -v
+curl --location --request POST "https://$APIGEE_HOST/v1/samples/ws-security/sign1" --header 'Content-Type: application/xml' --data-raw "<soapenv:Envelope xmlns:ns1='http://ws.example.com/' xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/'><soapenv:Body><ns1:sumResponse><ns1:return>9</ns1:return></ns1:sumResponse></soapenv:Body></soapenv:Envelope>"
 ```
 
 2. Store the a signed envelope in an environment variable
 
 ```sh
-SIGNED_ENVELOPE=$(curl --location --request POST "https://$APIGEE_HOST/v1/samples/vs-security/sign1" --header 'Content-Type: application/xml' --data-raw '<soapenv:Envelope xmlns:ns1='\''http://ws.example.com/'\'' xmlns:soapenv='\''http://schemas.xmlsoap.org/soap/envelope/'\''><soapenv:Body><ns1:sumResponse><ns1:return>9</ns1:return></ns1:sumResponse></soapenv:Body></soapenv:Envelope>')
+SIGNED_ENVELOPE=$(curl --location --request POST "https://$APIGEE_HOST/v1/samples/ws-security/sign1" --header 'Content-Type: application/xml' --data-raw "<soapenv:Envelope xmlns:ns1='http://ws.example.com/' xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/'><soapenv:Body><ns1:sumResponse><ns1:return>9</ns1:return></ns1:sumResponse></soapenv:Body></soapenv:Envelope>")
 ```
 
 3. Verify the signed envelope
 
 ```sh
-curl --location --request POST "https://$APIGEE_HOST/v1/samples/vs-security/validate1" --header 'Content-Type: application/xml' --data-raw "$SIGNED_ENVELOPE"
+curl --location --request POST "https://$APIGEE_HOST/v1/samples/ws-security/validate1" --header 'Content-Type: application/xml' --data-raw "$SIGNED_ENVELOPE"
 ```
 
 Notice the `<valid>true</valid>` element value in the response.
