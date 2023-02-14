@@ -42,8 +42,3 @@ apigeecli apis undeploy --name sample-ws-security --env "$APIGEE_ENV" --rev "$RE
 
 echo "Deleting proxy sample-ws-security proxy"
 apigeecli apis delete --name sample-ws-security --org "$PROJECT" --token "$TOKEN"
-
-echo "Deleting ws_sec_configuration environment property set..."
-apigeecli res delete --org "$PROJECT" --env "$APIGEE_ENV" --token "$TOKEN" --name ws_sec_configuration --type properties
-
-rm ws_sec_configuration.properties

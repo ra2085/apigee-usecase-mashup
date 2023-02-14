@@ -55,6 +55,9 @@ limitations under the License.
             </Request>
             <Response>
                 <Step>
+                    <Name>AM-KeyAndCert</Name>
+                </Step>
+                <Step>
                     <Name>Java-WSSEC-Sign-1</Name>
                 </Step>
                 <Step>
@@ -71,6 +74,9 @@ limitations under the License.
                 </Step>
             </Request>
             <Response>
+                <Step>
+                    <Name>AM-KeyAndCert</Name>
+                </Step>
                 <Step>
                     <Name>Java-WSSEC-Sign-2</Name>
                 </Step>
@@ -89,6 +95,9 @@ limitations under the License.
             </Request>
             <Response>
                 <Step>
+                    <Name>AM-KeyAndCert</Name>
+                </Step>
+                <Step>
                     <Name>Java-WSSEC-Sign-3</Name>
                 </Step>
                 <Step>
@@ -105,6 +114,9 @@ limitations under the License.
                 </Step>
             </Request>
             <Response>
+                <Step>
+                    <Name>AM-KeyAndCert</Name>
+                </Step>
                 <Step>
                     <Name>Java-WSSEC-Sign-4</Name>
                 </Step>
@@ -123,6 +135,9 @@ limitations under the License.
             </Request>
             <Response>
                 <Step>
+                    <Name>AM-KeyAndCert</Name>
+                </Step>
+                <Step>
                     <Name>Java-WSSEC-Sign-5</Name>
                 </Step>
                 <Step>
@@ -139,6 +154,9 @@ limitations under the License.
                 </Step>
             </Request>
             <Response>
+                <Step>
+                    <Name>AM-KeyAndCert</Name>
+                </Step>
                 <Step>
                     <Name>Java-WSSEC-Sign-6</Name>
                 </Step>
@@ -157,6 +175,9 @@ limitations under the License.
             </Request>
             <Response>
                 <Step>
+                    <Name>AM-KeyAndCert</Name>
+                </Step>
+                <Step>
                     <Name>Java-WSSEC-Sign-7</Name>
                 </Step>
                 <Step>
@@ -168,6 +189,9 @@ limitations under the License.
         <Flow name="sign8">
             <Request/>
             <Response>
+                <Step>
+                    <Name>AM-KeyAndCert</Name>
+                </Step>
                 <Step>
                     <Name>AM-ContrivedPayload</Name>
                 </Step>
