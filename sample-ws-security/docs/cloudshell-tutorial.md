@@ -48,7 +48,9 @@ You can test the API call to make sure the deployment was successful
 1. Obtain an inspect a signed envelope
 
 ```sh
-curl --location --request POST "https://$APIGEE_HOST/v1/samples/vs-security/sign1" --header 'Content-Type: application/xml' --data-raw '<soapenv:Envelope xmlns:ns1='\''http://ws.example.com/'\'' xmlns:soapenv='\''http://schemas.xmlsoap.org/soap/envelope/'\''><soapenv:Body><ns1:sumResponse><ns1:return>9</ns1:return></ns1:sumResponse></soapenv:Body></soapenv:Envelope>' -v
+curl --location --request POST 'https://34-111-225-119.nip.io/v1/samples/vs-security/sign1' \
+--header 'Content-Type: application/xml' \
+--data-raw '<soapenv:Envelope xmlns:ns1='\''http://ws.example.com/'\'' xmlns:soapenv='\''http://schemas.xmlsoap.org/soap/envelope/'\''><soapenv:Body><ns1:sumResponse><ns1:return>9</ns1:return></ns1:sumResponse></soapenv:Body></soapenv:Envelope>'
 ```
 
 2. Store the a signed envelope in an environment variable
