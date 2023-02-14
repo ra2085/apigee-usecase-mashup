@@ -1,4 +1,4 @@
-# Use Cloud Run Service from Apigee Proxy using Apigee Maven plugin and Cloud Build
+# Use Cloud Run Service from Apigee Proxy
 
 This sample demonstrates how to use Cloud Run Service from Apigee Proxy using Cloud Build.
 
@@ -69,6 +69,18 @@ gcloud projects add-iam-policy-binding "$PROJECT_ID" \
 gcloud builds submit --config cloudbuild.yaml . \
     --substitutions="_SERVICE=$CLOUD_RUN_SERVICE","_REGION=$CLOUD_RUN_REGION","_APIGEE_TEST_ENV=$APIGEE_ENV"
 ```
+
+This will trigger the Cloud Build and execute the steps in the <walkthrough-editor-open-file filePath="sample-rest-api-serverless/cloudbuild.yaml">cloudbuild.yaml</walkthrough-editor-open-file> file. At the end of the Cloud Build trigger, a proxy must be deployed to Apigee called `sample-rest-api-serverless`
+
+## Deploy Apigee components
+
+Next, let's create and deploy the Apigee resources.
+
+```sh
+./deploy-rest-api-serverless.sh
+```
+
+This script creates an API product, a sample App developer, an App, and environment properties. An `API_KEY` value will be included in the output during the execution of this script and you'll be able to use it to test the API in the next step.
 
 ## Test the APIs
 

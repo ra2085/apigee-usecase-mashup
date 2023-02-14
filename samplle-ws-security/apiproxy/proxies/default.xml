@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+Copyright 2023 Google LLC
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+-->
+<ProxyEndpoint name="default">
+    <Description>Proxy for Java callout for WS-Security signing</Description>
+    <HTTPProxyConnection>
+        <BasePath>/v1/samples/vs-security</BasePath>
+        <Properties/>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <FaultRules/>
+    <DefaultFaultRule>
+        <AlwaysEnforce>true</AlwaysEnforce>
+        <Step>
+            <Name>AM-Inject-Proxy-Revision-Header</Name>
+        </Step>
+    </DefaultFaultRule>
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <Name>AM-Clean-Request-Headers-From-Response</Name>
+            </Step>
+        </Response>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <Name>AM-Inject-Proxy-Revision-Header</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <Flows>
+        <Flow name="sign1">
+            <Request>
+                <Step>
+                    <Condition>NOT((request.header.content-type =| "text/xml") OR (request.header.content-type =| "application/xml" ))</Condition>
+                    <Name>RF-InvalidRequest</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>Java-WSSEC-Sign-1</Name>
+                </Step>
+                <Step>
+                    <Name>AM-SignatureResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix ~ "/sign1") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="sign2">
+            <Request>
+                <Step>
+                    <Condition>NOT((request.header.content-type =| "text/xml") OR (request.header.content-type =| "application/xml" ))</Condition>
+                    <Name>RF-InvalidRequest</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>Java-WSSEC-Sign-2</Name>
+                </Step>
+                <Step>
+                    <Name>AM-SignatureResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix ~ "/sign2") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="sign3">
+            <Request>
+                <Step>
+                    <Condition>NOT((request.header.content-type =| "text/xml") OR (request.header.content-type =| "application/xml" ))</Condition>
+                    <Name>RF-InvalidRequest</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>Java-WSSEC-Sign-3</Name>
+                </Step>
+                <Step>
+                    <Name>AM-SignatureResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix ~ "/sign3") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="sign4">
+            <Request>
+                <Step>
+                    <Condition>NOT((request.header.content-type =| "text/xml") OR (request.header.content-type =| "application/xml" ))</Condition>
+                    <Name>RF-InvalidRequest</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>Java-WSSEC-Sign-4</Name>
+                </Step>
+                <Step>
+                    <Name>AM-SignatureResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix ~ "/sign4") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="sign5">
+            <Request>
+                <Step>
+                    <Condition>NOT((request.header.content-type =| "text/xml") OR (request.header.content-type =| "application/xml" ))</Condition>
+                    <Name>RF-InvalidRequest</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>Java-WSSEC-Sign-5</Name>
+                </Step>
+                <Step>
+                    <Name>AM-SignatureResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix ~ "/sign5") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="sign6">
+            <Request>
+                <Step>
+                    <Condition>NOT((request.header.content-type =| "text/xml") OR (request.header.content-type =| "application/xml" ))</Condition>
+                    <Name>RF-InvalidRequest</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>Java-WSSEC-Sign-6</Name>
+                </Step>
+                <Step>
+                    <Name>AM-SignatureResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix ~ "/sign6") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="sign7">
+            <Request>
+                <Step>
+                    <Condition>NOT((request.header.content-type =| "text/xml") OR (request.header.content-type =| "application/xml" ))</Condition>
+                    <Name>RF-InvalidRequest</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>Java-WSSEC-Sign-7</Name>
+                </Step>
+                <Step>
+                    <Name>AM-SignatureResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix ~ "/sign7") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="sign8">
+            <Request/>
+            <Response>
+                <Step>
+                    <Name>AM-ContrivedPayload</Name>
+                </Step>
+                <Step>
+                    <Name>Java-WSSEC-Sign-8</Name>
+                </Step>
+                <Step>
+                    <Name>AM-SignatureResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix ~ "/sign8") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="validate1">
+            <Request>
+                <Step>
+                    <Condition>NOT((request.header.content-type =| "text/xml") OR (request.header.content-type =| "application/xml" ))</Condition>
+                    <Name>RF-InvalidRequest</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>Java-WSSEC-Validate-1</Name>
+                </Step>
+                <Step>
+                    <Name>AM-ValidationResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix ~ "/validate1") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="validate2">
+            <Request>
+                <Step>
+                    <Condition>NOT((request.header.content-type =| "text/xml") OR (request.header.content-type =| "application/xml" ))</Condition>
+                    <Name>RF-InvalidRequest</Name>
+                </Step>
+                <Step>
+                    <Condition>request.queryparam.thumbprint = null</Condition>
+                    <Name>RF-MissingThumbprint</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>Java-WSSEC-Validate-2</Name>
+                </Step>
+                <Step>
+                    <Name>AM-ValidationResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix ~ "/validate2") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="validate3">
+            <Request>
+                <Step>
+                    <Condition>NOT((request.header.content-type =| "text/xml") OR (request.header.content-type =| "application/xml" ))</Condition>
+                    <Name>RF-InvalidRequest</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>Java-WSSEC-Validate-3</Name>
+                </Step>
+                <Step>
+                    <Name>AM-ValidationResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix ~ "/validate3") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="validate4">
+            <Request>
+                <Step>
+                    <Condition>NOT((request.header.content-type =| "text/xml") OR (request.header.content-type =| "application/xml" ))</Condition>
+                    <Name>RF-InvalidRequest</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>Java-WSSEC-Validate-4</Name>
+                </Step>
+                <Step>
+                    <Name>AM-ValidationResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix ~ "/validate4") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="unknown">
+            <Description>Unknown request</Description>
+            <Request>
+                <Step>
+                    <Name>RF-UnknownRequest</Name>
+                </Step>
+            </Request>
+            <Response/>
+        </Flow>
+    </Flows>
+    <RouteRule name="LoopbackRoute"/>
+</ProxyEndpoint>
