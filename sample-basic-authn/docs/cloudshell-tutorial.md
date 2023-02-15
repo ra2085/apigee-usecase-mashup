@@ -23,7 +23,7 @@ cd sample-basic-authn
 
 Edit the provided sample `env.sh` file, and set the environment variables there.
 
-Click <walkthrough-editor-open-file filePath="sample-basic-auth/env.sh">here</walkthrough-editor-open-file> to open the file in the editor
+Click <walkthrough-editor-open-file filePath="sample-basic-authn/env.sh">here</walkthrough-editor-open-file> to open the file in the editor
 
 * `PROJECT` the project where your Apigee organization is located
 * `APIGEE_ENV` the Apigee environment where the demo resources should be created
@@ -42,7 +42,7 @@ source ./env.sh
 Next, let's create and deploy the Apigee resources.
 
 ```sh
-./deploy-sample-basic-authn.sh
+./deploy-basic-authn.sh
 ```
 
 This script creates an API Proxy, an API product, a sample App developer, and an App.

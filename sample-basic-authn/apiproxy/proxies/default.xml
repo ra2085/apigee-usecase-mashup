@@ -25,7 +25,7 @@ limitations under the License.
                 <Name>VK-VerifyClientId</Name>
             </Step>
             <Step>
-                <Condition>verifyapikey.VK-VerifyClientId.client_secret != private.ba_client_secret</Condition>
+                <Condition>not(private.ba_client_secret =| verifyapikey.VK-VerifyClientId.client_secret)</Condition>
                 <Name>RF-Unauthorized</Name>
             </Step>
         </Request>
