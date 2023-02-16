@@ -102,5 +102,5 @@ curl --location --request GET "https://$APIGEE_HOST/v1/samples/rest-api-serverle
 If you want to clean up the artifacts from this example in your Apigee Organization, first source your `env.sh` script, and then run
 
 ```bash
-./clean-up-cloud-run.sh
+./clean-up-rest-api-serverless.sh
 ```
