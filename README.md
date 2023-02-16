@@ -42,10 +42,6 @@ Feel free to modify and build upon the sample proxies. You can make changes in t
 
 Simply redeploy the proxies for changes to take effect.
 
-## <a name="ask"></a>Ask questions on the Apigee Community
-
-[Apigee Community](https://www.googlecloudcommunity.com/gc/Apigee/bd-p/cloud-apigee) is a great place to ask questions and find answers about developing API proxies.
-
 ## <a name="docs"></a>Apigee documentation
 
 The Apigee docs are located [here](https://cloud.google.com/apigee/docs).
