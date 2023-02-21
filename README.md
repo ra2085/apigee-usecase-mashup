@@ -33,6 +33,8 @@ Most developers begin by identifying an interesting sample based on a specific u
   Authentecate API calls by verifyng credentials from a Basic Authentication header
 - [sample-ws-security](sample-ws-security) -
   Verify SOAP envelopes using WS Security signature verification
+- [sample-saml-auth](sample-saml-auth) -
+  Verify SAML Assertions using Kestores and Truststores
 - [sample-rest-api-serverless](sample-rest-api-serverless) -
   Deploy a mock service on a Serverless function and identify a consumer using API Keys
 

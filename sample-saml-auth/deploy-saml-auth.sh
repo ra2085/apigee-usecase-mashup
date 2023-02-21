@@ -25,8 +25,8 @@ openssl req -new -subj '/CN=cymbal.com/O=Demo/C=US' -newkey rsa:2048 -sha256 -da
 echo "Creating key stores..."
 apigeecli keystores create --name saml-key --org "$PROJECT" --env "$APIGEE_ENV" --token "$TOKEN"
 apigeecli keystores create --name saml-crt --org "$PROJECT" --env "$APIGEE_ENV" --token "$TOKEN"
-apigeecli keyaliases create --key saml-key --alias saml-key --format keycertfile --certFilePath ./sa.crt --keyFilePath ./sa.key --org "$PROJECT" --env "$APIGEE_ENV" --token "$TOKEN"
-apigeecli keyaliases create --key saml-crt --alias saml-crt --format keycertfile --certFilePath ./sa.crt --org "$PROJECT" --env "$APIGEE_ENV" --token "$TOKEN"
+apigeecli keyaliases create --key saml-key --alias saml-key --format pem --certFilePath ./sa.crt --keyFilePath ./sa.key --org "$PROJECT" --env "$APIGEE_ENV" --token "$TOKEN"
+apigeecli keyaliases create --key saml-crt --alias saml-crt --format pem --certFilePath ./sa.crt --org "$PROJECT" --env "$APIGEE_ENV" --token "$TOKEN"
 
 echo "Importing and Deploying Apigee sample-saml-auth proxy..."
 REV=$(apigeecli apis create bundle -f ./apiproxy -n sample-saml-auth --org "$PROJECT" --token "$TOKEN" --disable-check | jq ."revision" -r)

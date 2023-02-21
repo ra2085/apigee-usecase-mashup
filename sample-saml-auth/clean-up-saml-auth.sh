@@ -43,6 +43,6 @@ apigeecli apis undeploy --name sample-saml-auth --env "$APIGEE_ENV" --rev "$REV"
 echo "Deleting proxy sample-saml-auth proxy"
 apigeecli apis delete --name sample-saml-auth --org "$PROJECT" --token "$TOKEN"
 
-echo "Delleting key stores..."
+echo "Deleting key stores..."
 apigeecli keystores delete --name saml-key --org "$PROJECT" --env "$APIGEE_ENV" --token "$TOKEN"
 apigeecli keystores delete --name saml-crt --org "$PROJECT" --env "$APIGEE_ENV" --token "$TOKEN"

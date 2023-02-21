@@ -60,7 +60,7 @@ SIGNED_ASSERTION=$(curl --location --request POST "https://$APIGEE_HOST/v1/sampl
 3. Store the a signed SAML assertion in an environment variable
 
 ```sh
-curl --location --request POST "https://$APIGEE_HOST/v1/samples/saml-auth/validate-saml" --header 'Content-Type: application/xml' --data-raw "$SIGNED_ASSERTION"
+curl --location --request POST "https://$APIGEE_HOST/v1/samples/saml-auth/validate-saml" --header 'Content-Type: application/xml' --data-raw "$SIGNED_ASSERTION" -v
 ```
 
 Notice the `200 OK response code` in the response.
