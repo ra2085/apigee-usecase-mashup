@@ -21,11 +21,11 @@ Use the following GCP CloudShell tutorial, and follow the instructions.
 
 ## Setup instructions
 
-1. Clone the apigee-usecase-mashup repo, and switch the sample-rest-api-serverless directory
+1. Clone the apigee-usecase-mashup repo, and switch the sample-saml-auth directory
 
 ```bash
 git clone https://github.com/ra2085/apigee-usecase-mashup
-cd sample-rest-api-serverless
+cd sample-saml-auth
 ```
 
 2. Edit the `env.sh` and configure the ENV vars
