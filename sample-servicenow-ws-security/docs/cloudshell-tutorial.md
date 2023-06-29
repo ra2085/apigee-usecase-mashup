@@ -87,7 +87,7 @@ Review the contents of the sample comfiguration file by clicking on this <walkth
 
 ### Edit servicenow properties file
 
-Provide **your own** credentials by editing the **servicenow.properties** file available in this <walkthrough-editor-open-file filePath="./sample-servicenow-ws-security/servicenow.properties">link</walkthrough-editor-open-file>.
+Provide **your own** credentials by editing the **servicenow.properties** file available in this <walkthrough-editor-open-file filePath="./sample-servicenow-ws-security/servicenow.properties">link</walkthrough-editor-open-file>. 
 
 Proceed to the next step.
 
