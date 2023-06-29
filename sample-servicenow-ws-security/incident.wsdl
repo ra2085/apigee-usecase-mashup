@@ -870,7 +870,7 @@
   </wsdl:binding>
   <wsdl:service name="ServiceNow_incident">
     <wsdl:port name="ServiceNowSoap" binding="tns:ServiceNowSoap">
-      <soap:address location="https://SERVICENOWINSTANCEHOSTNAME/incident.do?SOAP"/>
+      <soap:address location="https://SERVICENOW_INSTANCE_HOSTNAME/incident.do?SOAP"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

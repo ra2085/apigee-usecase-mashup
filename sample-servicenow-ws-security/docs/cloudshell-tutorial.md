@@ -6,16 +6,19 @@ This sample demonstrates how to transform the ServiceNow Incident table WebServi
 
 Click the **Start** button to proceed to the next step
 
----
+## Set your ServiceNow Instance Hostname
 
-## Setup environment
+Open the Incidents table WSDL file and replace the **SERVICENOW_INSTANCE_HOSTNAME** placeholder to your ServiceNow Instance hostname.
 
-Ensure you have an active GCP project active in the Cloud Shell
+<walkthrough-editor-select-line filePath="./incident.wsdl" startLine="873" endLine="873">incident.wsdl</walkthrough-editor-select-line>
 
-Select the GCP project where your Apigee Organization has been provisioned
+
+## Select GCP Project with Apigee
+
+Select the GCP project where your **Apigee Organization has been provisioned** and click **Next**.
 
 <walkthrough-project-setup></walkthrough-project-setup>
 
-<walkthrough-project-id/>
+## Set your 
 
 
