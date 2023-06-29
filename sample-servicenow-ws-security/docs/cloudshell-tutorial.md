@@ -48,7 +48,7 @@ Attach the Flow Callout to the PreFlow of the default Target Service configurati
 </Step>
 ```
 
-Paste the contents of your clipboard in the default TargetService configuration file between lines 9 and 10. Follow this <walkthrough-editor-select-line filePath="./sample-servicenow-ws-security/apiproxy/targets/default.xml" startLine="8" endLine="8" startCharacterOffset="12" endCharacterOffset="12">link</walkthrough-editor-select-line> to open the file on these lines.
+Paste the contents of your clipboard in the default TargetService configuration file between lines 16 and 17. Follow this <walkthrough-editor-select-line filePath="./sample-servicenow-ws-security/apiproxy/targets/default.xml" startLine="16" endLine="16" startCharacterOffset="7" endCharacterOffset="8">link</walkthrough-editor-select-line> to open the file on these lines.
 
 ### Replace the query parameters extract policy with a template
 
@@ -70,7 +70,7 @@ Copy the follwing lines:
 </soapenv:Body>
 ```
 
-Replace the contents of line 17 with the contents your clipboard in the getRecords-build-soap policy file. Follow this <walkthrough-editor-select-line filePath="./sample-servicenow-ws-security/apiproxy/targets/default.xml" startLine="16" endLine="16" startCharacterOffset="7" endCharacterOffset="26">link</walkthrough-editor-select-line> to open the file on line 17.
+Replace the contents of line 17 with the contents your clipboard in the getRecords-build-soap policy file. Follow this <walkthrough-editor-select-line filePath="./sample-servicenow-ws-security/apiproxy/policies/getRecords-build-soap.xml" startLine="27" endLine="27" startCharacterOffset="15" endCharacterOffset="31">link</walkthrough-editor-select-line> to open the file on line 17.
 
 Proceed to the next step.
 
