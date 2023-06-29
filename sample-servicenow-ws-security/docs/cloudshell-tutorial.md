@@ -12,7 +12,7 @@ Open the Incidents table WSDL file and replace the **SERVICENOW_INSTANCE_HOSTNAM
 
 <walkthrough-editor-open-file filePath="./sample-servicenow-ws-security/incident.wsdl">incident.wsdl</walkthrough-editor-open-file>
 
-<walkthrough-editor-select-line filePath="./sample-servicenow-ws-security/incident.wsdl" startLine="873" endLine="873" startCharacterOffset="39" endCharacterOffset="66">replace your ServiceNow Instance hostname</walkthrough-editor-select-line>
+<walkthrough-editor-select-line filePath="./sample-servicenow-ws-security/incident.wsdl" startLine="872" endLine="872" startCharacterOffset="39" endCharacterOffset="66">replace your ServiceNow Instance hostname</walkthrough-editor-select-line>
 
 
 ## Select GCP Project with Apigee
