@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<JavaCallout continueOnError="false" enabled="true" name="Java-WSSec-Sign">
+  <DisplayName>Java-WSSec-Sign</DisplayName>
+  <Properties>
+    <Property name="source">message.content</Property>
+    <Property name="output-variable">message.content</Property>
+    <Property name="signing-method">rsa-sha256</Property>
+    <Property name="digest-method">sha256</Property>
+    <Property name="expiry">5m</Property>
+    <Property name="private-key">{private.propertyset.servicenow.key}</Property>
+    <Property name="certificate">{private.propertyset.servicenow.cert}</Property>
+  </Properties>
+  <ClassName>com.google.apigee.callouts.wssecdsig.Sign</ClassName>
+  <ResourceURL>java://apigee-wssecdsig-20230605.jar</ResourceURL>
+</JavaCallout>

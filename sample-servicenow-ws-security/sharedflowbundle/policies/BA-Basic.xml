@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<BasicAuthentication continueOnError="false" enabled="true" name="BA-Basic">
+  <DisplayName>BA-Basic</DisplayName>
+  <Operation>Encode</Operation>
+  <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+  <User ref="propertyset.servicenow.username"/>
+  <Password ref="propertyset.servicenow.password"/>
+  <AssignTo createNew="false">request.header.Authorization</AssignTo>
+</BasicAuthentication>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlowBundle revision="2" name="servicenow-sec">
+  <DisplayName/>
+  <Description>Service Now WS-Security</Description>
+  <CreatedAt>1687999171784</CreatedAt>
+  <LastModifiedAt>1687999171784</LastModifiedAt>
+  <Policies>
+    <Policy>BA-Basic</Policy>
+    <Policy>Java-WSSec-Sign</Policy>
+  </Policies>
+  <Resources>
+    <Resource>java://apigee-wssecdsig-20230605.jar</Resource>
+  </Resources>
+  <SharedFlows>
+    <SharedFlow>default</SharedFlow>
+  </SharedFlows>
+  <subType>SharedFlow</subType>
+</SharedFlowBundle>
