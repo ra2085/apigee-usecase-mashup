@@ -35,14 +35,7 @@ Proceed to the next step.
 Create a Flow Callout that will reference the ServiceNow Security Shared Flow by executing these commands:
 
 ```sh
-cat > ./apiproxy/policies/FC-ServiceNow-Sec.xml << EOF
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<FlowCallout continueOnError="false" enabled="true" name="FC-ServiceNow-Sec">
-<DisplayName>FC-ServiceNow-Sec</DisplayName>
-<Parameters/>
-<SharedFlowBundle>servicenow-sec</SharedFlowBundle>
-</FlowCallout>
-EOF
+mv ./templates/FC-ServiceNow-Sec.xml ./apiproxy/policies/FC-ServiceNow-Sec.xml
 ```
 
 ### Attach Flow Callout to Target Service
