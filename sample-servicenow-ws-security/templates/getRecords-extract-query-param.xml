@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="true" enabled="true" name="getRecords-extract-query-param">
+  <DisplayName>getRecords Extract Query Param</DisplayName>
+  <Source>request</Source>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <QueryParam name="active">
+    <Pattern ignoreCase="true">{isActive}</Pattern>
+  </QueryParam>
+</ExtractVariables>
