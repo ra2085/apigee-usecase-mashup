@@ -12,4 +12,10 @@ Click the **Start** button to proceed to the next step
 
 Ensure you have an active GCP project active in the Cloud Shell
 
+Select the GCP project where your Apigee Organization has been provisioned
+
 <walkthrough-project-setup></walkthrough-project-setup>
+
+<walkthrough-project-id/>
+
+
