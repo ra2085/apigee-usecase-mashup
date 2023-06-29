@@ -38,11 +38,10 @@ Create a Flow Callout that will reference the ServiceNow Security Shared Flow by
 cat > ./apiproxy/policies/FC-ServiceNow-Sec.xml << EOF
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <FlowCallout continueOnError="false" enabled="true" name="FC-ServiceNow-Sec">
-  <DisplayName>FC-ServiceNow-Sec</DisplayName>
-  <Parameters/>
-  <SharedFlowBundle>servicenow-sec</SharedFlowBundle>
+<DisplayName>FC-ServiceNow-Sec</DisplayName>
+<Parameters/>
+<SharedFlowBundle>servicenow-sec</SharedFlowBundle>
 </FlowCallout>
-
 EOF
 ```
 
