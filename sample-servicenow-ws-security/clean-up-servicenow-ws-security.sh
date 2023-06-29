@@ -24,6 +24,12 @@ if [ -z "$APIGEE_ENV" ]; then
     exit
 fi
 
+echo "Installing apigeecli"
+curl -s https://raw.githubusercontent.com/apigee/apigeecli/master/downloadLatest.sh | bash
+export PATH=$PATH:$HOME/.apigeecli/bin
+
+TOKEN=$(gcloud auth print-access-token)
+
 echo "Undeploying servicenow-incident-v1 proxy"
 REV=$(apigeecli envs deployments get --env "$APIGEE_ENV" --org "$PROJECT_ID" --token "$TOKEN" --disable-check | jq .'deployments[]| select(.apiProxy=="servicenow-incident-v1").revision' -r)
 apigeecli apis undeploy --name servicenow-incident-v1 --env "$APIGEE_ENV" --rev "$REV" --org "$PROJECT_ID" --token "$TOKEN"

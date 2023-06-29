@@ -64,9 +64,9 @@ Copy the follwing lines:
 
 ```
 <soapenv:Body>
-    <inc:getRecords>
+    <getRecords>
         <active>{isActive}</active>
-    </inc:getRecords>
+    <getRecords>
 </soapenv:Body>
 ```
 
@@ -129,7 +129,7 @@ Proceed to the next step.
 Test the solution by executing the following cURL command:
 
 ```sh
-curl -X GET "https://$APIGEE_HOST//ervicenow_incident/records?active=true"
+curl -X GET "https://$APIGEE_HOST/servicenow_incident/records?active=true" -vv
 ```
 Proceed to the next step.
 
